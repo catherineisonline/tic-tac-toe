@@ -21,9 +21,8 @@
   margin: 0;
   padding: 0;
 }
-html,
-body {
-  height: 100%;
+html {
+  min-height: 100%;
 }
 body {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -31,6 +30,7 @@ body {
   overflow-y: scroll;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100vh;
 }
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
@@ -77,7 +77,7 @@ h6 {
 
 main {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   background-color: var(--light-blue);
   display: flex;
   flex-direction: column;
@@ -87,7 +87,7 @@ main {
 h1 {
   font-family: var(--game-font);
   color: var(--dark-purple);
-  font-size: 4rem;
+  font-size: 6vw;
   letter-spacing: 1px;
   padding: 4rem;
 }
@@ -103,7 +103,23 @@ h1 {
   transition: margin-top 0.3s ease, margin-left 0.3s ease, box-shadow 0.3s ease;
   background: var(--light-blue);
 }
-
+.game-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.restart {
+  background-color: transparent;
+  padding: 0.5rem 4rem;
+  cursor: pointer;
+  border: 1px solid var(--dark-purple);
+  background-color: var(--dark-purple);
+  color: var(--white);
+  font-family: var(--speech-font);
+  font-weight: 400;
+  border-radius: 5px;
+}
 .status {
   margin-bottom: 10px;
 }
@@ -113,7 +129,7 @@ h1 {
   border: 10px solid var(--dark-purple);
   cursor: pointer;
   float: left;
-  font-size: 4rem;
+  font-size: 7vw;
   font-weight: bold;
   line-height: 34px;
   height: 8rem;
@@ -175,7 +191,7 @@ h1 {
   border-radius: 11px;
   width: max-content;
   box-shadow: 20px 20px var(--dark-blue);
-  font-size: 1.5rem;
+  font-size: 2.5vw;
   background-color: var(--light-grey);
   font-family: var(--speech-font);
 }
@@ -188,7 +204,7 @@ h1 {
   animation: float2 5s ease-in-out infinite;
   content: ".";
   text-align: left;
-  font-size: 55px;
+  font-size: 8vw;
   width: 55px;
   height: 11px;
   line-height: 30px;
@@ -261,5 +277,6 @@ h1 {
 @media screen and (max-width: 900px) {
   .game {
     grid-template-columns: 1fr;
+    margin-bottom: 3rem;
   }
 }
