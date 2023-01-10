@@ -1,4 +1,4 @@
-import Friends from '../../assets/images/friends.jpg'
+import Friends from '../../assets/images/friends.webp'
 
 const GameInfo = ({ status, winner, xIsNext }) => {
   return (
