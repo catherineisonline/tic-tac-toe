@@ -40,6 +40,7 @@ class Game extends React.Component {
   }
 
   jumpTo(step) {
+    console.log(step)
     this.setState({
       stepNumber: step,
       xIsNext: step % 2 === 0,
@@ -68,7 +69,7 @@ class Game extends React.Component {
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
-            jumpTo={this.jumpTo}
+            jumpTo={(i) => this.jumpTo(i)}
           />
         </section>
       </React.Fragment>
