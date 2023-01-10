@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Seymour+One&display=swap");
+
+:root {
+  --game-font: "Seymour One", sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -63,6 +69,7 @@ h6 {
 }
 
 main {
+  position: relative;
   height: 100%;
   background-color: rgba(121, 185, 255, 255);
   display: flex;
@@ -78,35 +85,16 @@ main {
   width: 100%;
 } */
 .game-board {
-  box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
-  -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
-  -moz-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 35px;
-  /* padding-top: 5rem; */
-  margin: 30px;
-  /* width: 350px; */
-  /* Font Styling */
+  padding: 25px;
   font-size: 30px;
   font-weight: bold;
   color: #fff;
-  /* -webkit-transition: margin-bottom 0.3s ease, box-shadow 0.3s ease;
-  -moz-transition: margin-bottom 0.3s ease, box-shadow 0.3s ease;
-  transition: margin-bottom 0.3s ease, box-shadow 0.3s ease; */
-
-  background: #1abc9c;
-  border: solid 1px #16a085;
   transition: margin-top 0.3s ease, margin-left 0.3s ease, box-shadow 0.3s ease;
   background: rgba(121, 185, 255, 255);
-  border: solid 1px #2a76b4;
-
-  box-shadow: -1px -0px 0px #2a76b4, -0px -1px 0px #2a76b4, -2px -1px 0px #2a76b4, -1px -2px 0px #2a76b4,
-    -3px -2px 0px #2a76b4, -2px -3px 0px #2a76b4, -4px -3px 0px #2a76b4, -3px -4px 0px #2a76b4, -5px -4px 0px #2a76b4,
-    -4px -5px 0px #2a76b4, -6px -5px 0px #2a76b4, -5px -6px 0px #2a76b4, -7px -6px 0px #2a76b4, -6px -7px 0px #2a76b4,
-    -8px -7px 0px #2a76b4, -7px -8px 0px #2a76b4, -9px -8px 0px #2a76b4, -8px -9px 0px #2a76b4;
 }
 
 .status {
@@ -115,9 +103,10 @@ main {
 
 .square {
   background: #ffffff;
-  border: 2px solid #371a46;
+  border: 10px solid #371a46;
+  cursor: pointer;
   float: left;
-  font-size: 24px;
+  font-size: 4rem;
   font-weight: bold;
   line-height: 34px;
   height: 8rem;
@@ -126,6 +115,8 @@ main {
   padding: 0;
   text-align: center;
   width: 8rem;
+  color: #371a46;
+  font-family: var(--game-font);
 }
 
 .square:focus {
@@ -133,7 +124,7 @@ main {
 }
 
 .kbd-navigation .square:focus {
-  background: #ddd;
+  background-color: #ddd;
 }
 
 .game {
@@ -148,9 +139,6 @@ main {
 .game img {
   width: 100%;
   position: relative;
-  /* max-width: 20rem; */
-  /* max-height: 20rem;
-  height: auto; */
   object-fit: contain;
 }
 
@@ -158,18 +146,108 @@ main {
   position: absolute;
 }
 
-.player-x,
-.player-o {
-  position: absolute;
-  color: white;
-  z-index: 999;
-  font-size: 2rem;
-  margin-top: 2rem;
-}
 .player-x {
   margin-left: 3rem;
 }
 
 .player-o {
   margin-left: 25rem;
+}
+
+.player-x,
+.player-o {
+  position: absolute;
+  z-index: 999;
+  transform: translatey(0px);
+  -webkit-animation: float 5s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(18, 22, 75);
+  padding: 1rem 3rem;
+  border-radius: 11px;
+  width: max-content;
+  /* position: relative; */
+  box-shadow: 20px 20px#2a76b4;
+  font-size: 1.5rem;
+  background-color: #ddd;
+}
+
+.player-x:after,
+.player-o:after {
+  z-index: 999;
+  transform: translatey(0px);
+  -webkit-animation: float2 5s ease-in-out infinite;
+  animation: float2 5s ease-in-out infinite;
+  content: ".";
+  text-align: left;
+  font-size: 55px;
+  width: 55px;
+  height: 11px;
+  line-height: 30px;
+  border-radius: 11px;
+  background-color: #ddd;
+  position: absolute;
+  display: block;
+  bottom: -30px;
+  left: 0;
+  box-shadow: 22px 22px #2a76b4;
+  z-index: -2;
+}
+
+@-webkit-keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@-webkit-keyframes float2 {
+  0% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+  55% {
+    transform: translatey(-20px);
+  }
+  60% {
+    line-height: 10px;
+  }
+  100% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+}
+@keyframes float2 {
+  0% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+  55% {
+    transform: translatey(-20px);
+  }
+  60% {
+    line-height: 10px;
+  }
+  100% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
 }
