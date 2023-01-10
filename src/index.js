@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Friends from './assets/images/friends.jpg'
+
 import calculateWinner from './helpers/calculateWinner'
 import Board from './components/board/Board'
+import GameInfo from './components/game-info/GameInfo'
 
 class Game extends React.Component {
   constructor(props) {
@@ -56,29 +57,20 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
     }
     return (
-      <>
+      <React.Fragment>
         <h1>Tic Tac Toe</h1>
-
         <section className="game">
-          <section className="game-information">
-            {this.state.xIsNext && !winner ? (
-              <h3 className="player-x">It's your turn</h3>
-            ) : !this.state.xIsNext && !winner ? (
-              <h3 className="player-o">Now you! </h3>
-            ) : winner && status === 'Winner: X' ? (
-              <h3 className="player-x">Nice! I won! </h3>
-            ) : (
-              <h3 className="player-o">Wohoo! I made it!</h3>
-            )}
-            <img src={Friends} alt="" />
-          </section>
-
+          <GameInfo
+            status={status}
+            winner={winner}
+            xIsNext={this.state.xIsNext}
+          />
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
         </section>
-      </>
+      </React.Fragment>
     )
   }
 }
