@@ -89,7 +89,7 @@ h1 {
   color: var(--dark-purple);
   font-size: 6vw;
   letter-spacing: 1px;
-  padding: 4rem;
+  padding: 1rem 1rem 6rem 1rem;
 }
 .game-board {
   position: relative;
@@ -100,7 +100,10 @@ h1 {
   font-size: 30px;
   font-weight: bold;
   color: var(--white);
-  transition: margin-top 0.3s ease, margin-left 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    margin-top 0.3s ease,
+    margin-left 0.3s ease,
+    box-shadow 0.3s ease;
   background: var(--light-blue);
 }
 .game-section {
@@ -119,6 +122,7 @@ h1 {
   font-family: var(--speech-font);
   font-weight: 400;
   border-radius: 5px;
+  transition: all ease-in-out 0.3s;
 }
 .status {
   margin-bottom: 10px;
@@ -129,7 +133,7 @@ h1 {
   border: 10px solid var(--dark-purple);
   cursor: pointer;
   float: left;
-  font-size: 7vw;
+  font-size: 6vw;
   font-weight: bold;
   line-height: 34px;
   height: 8rem;
@@ -173,7 +177,8 @@ h1 {
 }
 
 .player-o {
-  margin-left: 25rem;
+  margin-left: 23rem;
+  margin-top: -3rem;
 }
 
 .player-x,
@@ -271,6 +276,14 @@ h1 {
   100% {
     line-height: 30px;
     transform: translatey(0px);
+  }
+}
+
+@media (hover: hover) {
+  .restart:hover {
+    transition: all ease-in-out 0.3s;
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
   }
 }
 

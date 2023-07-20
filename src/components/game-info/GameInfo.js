@@ -6,7 +6,7 @@ const GameInfo = ({ status, winner, xIsNext }) => {
       {xIsNext && !winner ? (
         <h3 className="player-x">It's your turn, player X</h3>
       ) : !xIsNext && !winner ? (
-        <h3 className="player-o">Now you, player ! </h3>
+        <h3 className="player-o">Now you, player O! </h3>
       ) : winner && status === 'Winner: X' ? (
         <h3 className="player-x">Nice! I won! </h3>
       ) : (
