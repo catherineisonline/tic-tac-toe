@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import calculateWinner from './helpers/calculateWinner'
 import Board from './components/board/Board'
 import GameInfo from './components/game-info/GameInfo'
@@ -78,4 +78,8 @@ class Game extends React.Component {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Game />)
+root.render(<Router basename={process.env.REACT_APP_URI}>
+  <Routes>
+    <Route path="/tic-tac-toe" element={<Game />} />
+  </Routes>
+</Router>)
