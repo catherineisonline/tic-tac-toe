@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.2384b4fd.css",
-    "main.js": "/static/js/main.2bb01e44.js",
-    "static/media/friends.webp": "/static/media/friends.22abd874b444f55cd86f.webp",
-    "index.html": "/index.html",
-    "main.2384b4fd.css.map": "/static/css/main.2384b4fd.css.map",
-    "main.2bb01e44.js.map": "/static/js/main.2bb01e44.js.map"
+    "main.css": "/catherineisonline/tic-tac-toe/static/css/main.2384b4fd.css",
+    "main.js": "/catherineisonline/tic-tac-toe/static/js/main.75a498a7.js",
+    "static/media/friends.webp": "/catherineisonline/tic-tac-toe/static/media/friends.22abd874b444f55cd86f.webp",
+    "index.html": "/catherineisonline/tic-tac-toe/index.html",
+    "main.2384b4fd.css.map": "/catherineisonline/tic-tac-toe/static/css/main.2384b4fd.css.map",
+    "main.75a498a7.js.map": "/catherineisonline/tic-tac-toe/static/js/main.75a498a7.js.map"
   },
   "entrypoints": [
     "static/css/main.2384b4fd.css",
-    "static/js/main.2bb01e44.js"
+    "static/js/main.75a498a7.js"
   ]
 }
